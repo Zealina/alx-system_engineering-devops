@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -1 | perl -lne 's.%3 or print;'
+ls -1 | perl -lne '$.%3 or print;'
