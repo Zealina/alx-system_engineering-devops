@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $
+echo $((water#$WATER + stir#$STIR)) | tr [0-9] bestchol
