@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Prints using the while loop with exceptions
+i=0
+while [[ $i -ne 10 ]]
+do
+	i=$((i + 1))
+	if [[ $i -eq 9 ]]; then
+		echo "Hi"
+		continue
+	fi
+	echo "Best School"
+done
