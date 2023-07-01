@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-count=5
-until [ $count -eq 0 ]; do
-    echo "Countdown: $count"
-    count=$((count - 1))
-done
-
-echo "Finished"

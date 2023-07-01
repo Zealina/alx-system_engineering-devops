@@ -2,6 +2,6 @@
 # Prints 'for best school' ten times
 i=0
 until [ $i -ge 10 ]; do
-	echo "For best school"
+	echo "Best School"
 	i=$((i + 1))
 done
