@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Prints 'for best school' ten times
+i=0
+until [ $i -ge 10 ]; do
+	echo "For best school"
+	i=$((i + 1))
+done
