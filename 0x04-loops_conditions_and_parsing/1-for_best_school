@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 # Prints using a for loop
-i=0
-until [ $i -ge 10 ]; do
-	echo "Best School"
-	i=$((i + 1))
+for _ in {1..10}; do
+	echo "Best School";
 done
