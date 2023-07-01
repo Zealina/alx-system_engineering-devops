@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Print Twelve hours of a clock
+i=1
+while [[ $i -le 12 ]]
+do
+	echo "Hour: $i"
+	j=1
+	while [[ $j -lt 60 ]]
+	do
+		echo "$j"
+		j=$((j + 1))
+	done
+	i=$((i + 1))
+done
