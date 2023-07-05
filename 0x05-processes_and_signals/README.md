@@ -1,1 +1,1 @@
-PID signla
+PID signals

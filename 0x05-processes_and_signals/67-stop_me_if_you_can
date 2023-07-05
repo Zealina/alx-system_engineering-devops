@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Terminate the fourth task
+pkill -f "7-highlander"
