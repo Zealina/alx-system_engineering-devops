@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Parsing Apache logs, Number of occurences
+file="apache-access.log"
+awk '{print $1" "$9}' $file | sort | uniq -c | sort -r
