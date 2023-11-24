@@ -1,5 +1,6 @@
-# Use puppet to kill a process
-exec {'pkill':
-command => 'pkill -f killmenow',
-onlyif  => 'pgrep -f killmenow',
+# kill process killmenow
+
+exec { 'pkill':
+  command  => 'pkill killmenow',
+  provider => 'shell',
 }
