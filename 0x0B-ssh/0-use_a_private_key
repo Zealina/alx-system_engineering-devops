@@ -1,2 +1,3 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
+# Use script to connect to 54.236.30.99
 ssh -i ~/.ssh/school ubuntu@54.236.30.99
