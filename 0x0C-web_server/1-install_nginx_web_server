@@ -1,4 +1,20 @@
 #!/usr/bin/env bash
 # Install and configure nginx web server
 sudo apt-get -y install nginx
-sudo echo "server {listen 80\n
+sudo bash -c 'cat <<EOF > /etc/nginx/sites-available/default
+server {
+    listen 80;
+    server_name _;
+
+    location / {
+        root /usr/share/nginx/html;
+	index index.html;
+    }
+}
+EOF'
+
+sudo bash -c 'cat <<EOF > /usr/share/nginx/html/index.html
+Hello World!
+EOF'
+
+sudo /etc/init.d/nginx restart
