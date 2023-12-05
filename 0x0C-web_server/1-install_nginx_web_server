@@ -18,4 +18,4 @@ sudo bash -c 'cat <<EOF > /usr/share/nginx/html/index.html
 Hello World!
 EOF'
 
-sudo service nginx start
+sudo service nginx restart
