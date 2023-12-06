@@ -12,8 +12,8 @@ server {
 	index index.html;
 
 	rewrite ^/redirect_me  https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
-	error_page 404 /error-404.html;
     }
+    error_page 404 /error-404.html;
 }
 EOF'
 
@@ -21,7 +21,7 @@ sudo bash -c 'cat <<EOF > /usr/share/nginx/html/index.html
 Hello World!
 EOF'
 
-sudo bash -c "cat <<EOF > /error-404.html
+sudo bash -c "cat <<EOF > /usr/share/nginx/html/error-404.html
 Ceci n'est pas une page
 EOF"
 
