@@ -6,7 +6,7 @@ sudo apt-get install -y haproxy=2.8.\*
 
 echo "
 frontend myfrontend
-    bind 127.0.0.1:80
+    bind *:80
     default_backend myservers
 
 backend myservers
