@@ -1,10 +1,17 @@
-# sudo apt-get -y update
-# sudo apt-get -y upgrade
+# Update and upgrade the system
+sudo apt-get -y update
+sudo apt-get -y upgrade
+# install ufw
 sudo apt install -y ufw
+# Allow SSH
 sudo ufw allow 22
+# Allow HTTPS
 sudo ufw allow 443
+#Allow HTTP
 sudo ufw allow 80
+# Turn on logging
 sudo ufw logging on
+# Restart the ufw process
 sudo ufw disable
 echo y | sudo ufw enable
 sudo ufw status
