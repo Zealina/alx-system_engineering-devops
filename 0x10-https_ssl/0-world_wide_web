@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Define the function to extract record information
+get_record_info() {
+  local subdomain="$1"
+  dig "$subdomain" | awk '/^;; ANSWER SECTION:$/ {next} {print $1, $3, $4}'
+}
+
+# Check if subdomain argument is provided
+if [[ $# -eq 2 ]]; then
+  subdomain="$2"
+else
+  # Define default subdomains
+  subdomains=("www" "lb-01" "web-01" "web-02")
+fi
+
+# Loop through subdomains
+for domain in "${subdomains[@]}"; do
+  # Check if specific subdomain is provided
+  if [[ -n "$subdomain" ]] && [[ "$domain" != "$subdomain" ]]; then
+    continue
+  fi
+
+  # Get record information
+  record_type=$(get_record_info "$domain.$1" | cut -d ' ' -f 1)
+  destination=$(get_record_info "$domain.$1" | cut -d ' ' -f 3)
+
+  # Print output
+  [[ -n "$record_type" ]] && printf "The subdomain %s is a %s record and points to %s\n" "$domain" "$record_type" "$destination"
+done
