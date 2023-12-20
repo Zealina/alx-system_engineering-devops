@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Setup a user that the checker can use when verifying a task or project
+
+sudo mysql -uroot -e "CREATE USER IF NOT EXISTS 'holberton_user'@'localhost' IDENTIFIED BY 'projectcorrection280hbtn'"
+sudo mysql -uroot -e "GRANT REPLICATION CLIENT ON *.* TO 'holberton_user'@'localhost'"
