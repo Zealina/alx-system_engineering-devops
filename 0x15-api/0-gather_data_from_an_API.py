@@ -2,8 +2,8 @@
 """Gather Data from an API"""
 
 if __name__ == '__main__':
-    from sys import argv
     import requests
+    from sys import argv
 
     todo_url = 'https://jsonplaceholder.typicode.com/todos/?userId=' + argv[1]
     todo = requests.get(todo_url).json()
