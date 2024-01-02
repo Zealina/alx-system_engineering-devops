@@ -2,9 +2,9 @@
 """Gather Data from an API"""
 
 if __name__ == '__main__':
-    import urllib.request
-    from sys import argv
     import json
+    from sys import argv
+    import urllib.request
 
     todo_url = 'https://jsonplaceholder.typicode.com/todos/?userId=' + argv[1]
     todo_response = urllib.request.urlopen(todo_url)
