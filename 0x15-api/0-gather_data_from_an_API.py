@@ -2,20 +2,14 @@
 """Gather Data from an API"""
 
 if __name__ == '__main__':
-    import json
     from sys import argv
-    import urllib.request
+    import requests
 
     todo_url = 'https://jsonplaceholder.typicode.com/todos/?userId=' + argv[1]
-    todo_response = urllib.request.urlopen(todo_url)
+    todo = requests.get(todo_url).json()
     user_url = 'https://jsonplaceholder.typicode.com/users/?id=' + argv[1]
-    user_response = urllib.request.urlopen(user_url)
+    user = requests.get(user_url).json()
 
-    todo = todo_response.read()
-    user = user_response.read()
-
-    todo = json.loads(todo)
-    user = json.loads(user)
     done = 0
     total = 0
 
