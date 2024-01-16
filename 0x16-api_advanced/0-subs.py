@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Total Number of Subscribers"""
-
 import requests
 
 
